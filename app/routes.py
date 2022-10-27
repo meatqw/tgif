@@ -1,6 +1,6 @@
 from app import db, app
 from flask import Flask, jsonify, render_template, url_for, request, redirect, flash, request
-# from admin.models import AccessKeys, Objects, Users, UserAdmin, Chats
+from app.models import AccessKeys, Objects, Users, UserAdmin, Chats
 from flask_login import login_user, login_required, logout_user
 
 
