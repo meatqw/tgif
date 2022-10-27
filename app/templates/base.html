@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TGIF</title>
+    <link rel="stylesheet" href="/static/css/style.min.css" />
+  </head>
+
+  <body class="body">
+    <main class="main">
+      <div class="main__inner">
+        <div class="menu">
+          <nav class="menu__inner">
+            <div class="menu__top">
+              <div class="menu__top-left">
+                <button
+                  class="burger content__burger _show-1024 js-menu-toggle"
+                >
+                  <img
+                    class="burger__img"
+                    src="/static/images/icon/menu-close.svg"
+                    alt="menu-toggle"
+                  />
+                  <span class="sr-only"> Открыть меню </span>
+                </button>
+
+                <a class="menu__logo logo" href="#">
+                  <img
+                    class="logo img"
+                    src="/static/images/logo.svg"
+                    alt="logo"
+                  />
+                </a>
+              </div>
+
+              <div class="content__exit-wrap _show-1024">
+                <button class="content__exit" type="button">
+                  <img
+                    class="content__exit-img"
+                    width="30"
+                    height="30"
+                    src="/static/images/icon/exit.svg"
+                    alt="exit"
+                  />
+                  <span class="sr-only"> Выйти из личного кабинета </span>
+                </button>
+              </div>
+            </div>
+
+            <div class="balance">
+              <div class="balance__top">
+                <div class="balance__text">
+                  <span class="balance__text-text balance__text-text_first">
+                    Баланс
+                  </span>
+                  <span class="balance__balance"> 20000 </span>
+                  <span class="balance__text-text"> RUB </span>
+                </div>
+                <button class="balance__btn js-toggle-balance">
+                  <span class="sr-only"> Посмотреть реквизит </span>
+                </button>
+              </div>
+
+              <div class="balance__bottom">
+                <div class="balance__input-wrap">
+                  <input
+                    class="balance__input"
+                    disabled
+                    type="text"
+                    value="7583958399294638"
+                  />
+                  <button class="balance__copy" type="button">
+                    <img
+                      class="balance__img"
+                      src="/static/images/icon/copy.svg"
+                      alt="copy"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a class="menu__link {% if active=='news' %}_active{%endif %}" href="/news"> Новости </a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link {% if active=='' %}_active{%endif %}" href="#"> Продажа </a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link {% if active=='request' %}_active{%endif %}" href="/request"> Заявки </a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link {% if active=='wallets' %}_active{%endif %}" href="/wallets"> Кошельки </a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link {% if active=='faq' %}_active{%endif %}" href="/faq"> FAQ </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="content">
+          <div class="content__top">
+            <div class="content__left">
+              <button class="burger content__burger _show-1024 js-menu-toggle">
+                <img
+                  class="burger__img"
+                  src="/static/images/icon/menu.svg"
+                  alt="menu-toggle"
+                />
+                <span class="sr-only"> Открыть меню </span>
+              </button>
+              <a class="logo _show-1024" href="/">
+                <img
+                  class="logo img"
+                  src="/static/images/logo.svg"
+                  alt="logo"
+                />
+              </a>
+            </div>
+
+            <button class="content__exit" type="button">
+              <img
+                class="content__exit-img"
+                width="30"
+                height="30"
+                src="/static/images/icon/exit.svg"
+                alt="exit"
+              />
+              <span class="sr-only"> Выйти из личного кабинета </span>
+            </button>
+          </div>
+
+          {% block content %}{% endblock %}
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer__top">
+          <div class="footer__social-wrap">
+            <ul class="footer__social social">
+              <li class="social__item">
+                <a class="social__link" href="#">
+                  <img
+                    class="social__img"
+                    src="/static/images/social/1.svg"
+                    alt="social"
+                  />
+                </a>
+              </li>
+              <li class="social__item">
+                <a class="social__link" href="#">
+                  <img
+                    class="social__img"
+                    src="/static/images/social/1.svg"
+                    alt="social"
+                  />
+                </a>
+              </li>
+              <li class="social__item">
+                <a class="social__link" href="#">
+                  <img
+                    class="social__img"
+                    src="/static/images/social/1.svg"
+                    alt="social"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer__nav-wrap">
+            <ul class="footer__nav">
+              <li class="footer__nav-item">
+                <a class="footer__nav-link" href="#"> Баланс </a>
+              </li>
+              <li class="footer__nav-item">
+                <a class="footer__nav-link" href="/news"> Новости </a>
+              </li>
+              <li class="footer__nav-item">
+                <a class="footer__nav-link" href="#"> Продажи </a>
+              </li>
+              <li class="footer__nav-item">
+                <a class="footer__nav-link" href="/request"> Завяки </a>
+              </li>
+              <li class="footer__nav-item">
+                <a class="footer__nav-link" href="/wallets"> Кошелёк </a>
+              </li>
+              <li class="footer__nav-item">
+                <a class="footer__nav-link" href="/faq"> FAQ </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer__tel-wrap">
+            <a class="footer__tel" href="tel:+375331234567">
+              +375 (33) 123-45-67
+            </a>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p class="footer__info">
+            Время работы, адрес или другая полезная информация. Время работы,
+            адрес или другая полезная информация
+          </p>
+          <p class="footer__copyright">@ Все права защищены</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/static/js/main.min.js"></script>
+  </body>
+</html>

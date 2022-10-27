@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="content__main">
+  <div class="content__items">
+    <div class="content__item content__item_1">
+      <div class="content__item-top">Счёт-эскроу</div>
+      <div class="content__item-bottom">
+        10000
+        <span>RUB</span>
+      </div>
+    </div>
+    <div class="content__item content__item_2">
+      <div class="content__item-top">Выполнено заявок</div>
+      <div class="content__item-bottom">32</div>
+    </div>
+    <div class="content__item content__item_3">
+      <div class="content__item-top">Получено</div>
+      <div class="content__item-bottom">
+        5200
+        <span>RUB</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="news">
+    <h1 class="news__title">Наши новости</h1>
+    <div class="news__slider js-news-slider">
+      <div class="news__slide-wrap">
+        <a class="news__slide" href="#">
+          <img class="news__img" src="/static/images/news/1.jpg" alt="news" />
+          <div class="news__content">
+            <div class="news__item-title">Примерный заголовок новостей</div>
+            <div class="news__text">Примерный текст новостей</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="news__slide-wrap">
+        <a class="news__slide" href="#">
+          <img class="news__img" src="/static/images/news/2.jpg" alt="news" />
+          <div class="news__content">
+            <div class="news__item-title">Примерный заголовок новостей</div>
+            <div class="news__text">
+              Примерный текст новостей Примерный текст новостей
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="news__slide-wrap">
+        <a class="news__slide" href="#">
+          <img class="news__img" src="/static/images/news/3.jpg" alt="news" />
+          <div class="news__content">
+            <div class="news__item-title">Примерный заголовок новостей</div>
+            <div class="news__text">
+              Примерный текст новостей Примерный текст новостей
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="news__slide-wrap">
+        <a class="news__slide" href="#">
+          <img class="news__img" src="/static/images/news/1.jpg" alt="news" />
+          <div class="news__content">
+            <div class="news__item-title">Примерный заголовок новостей</div>
+            <div class="news__text">Примерный текст новостей</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+
+{% endblock %}
