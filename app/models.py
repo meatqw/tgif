@@ -11,6 +11,13 @@ class News(db.Model):
     description = db.Column(db.TEXT, nullable=True)
     datetime = db.Column(db.DateTime, nullable=False, default=datetime.now())
     
+class User(db.Model, UserMixin):
+    id = db.Column(db.Integer(), primary_key=True)
+    token = db.Column(db.String(200), nullable=True)
+    requests = db.Column(db.Integer(), nullable=True)
+    e=    
+    
+    
     
 class UserAdmin(db.Model, UserMixin):
     id = db.Column(db.Integer(), primary_key=True)
