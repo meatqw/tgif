@@ -1,6 +1,6 @@
 from app import db, app
 from flask import Flask, jsonify, render_template, url_for, request, redirect, flash, request
-from app.models import AccessKeys, Objects, Users, UserAdmin, Chats
+from app.models import News
 from flask_login import login_user, login_required, logout_user
 
 
@@ -29,19 +29,21 @@ def index():
 
 
 # ***************** NEWS-PAGE ******************
-@app.route('/news/page', methods=['POST', 'GET'])
-def news_page():
+@app.route('/news/<string:id>', methods=['POST', 'GET'])
+def news_page(id):
     """Render NEWS-PAGE page"""
 
-    return render_template('news-page.html', active='news-page')
+    news = News.query.filter_by(id=id).first()
+    return render_template('news-page.html', active='news-page', news=news)
 
 
 # ***************** NEWS ******************
 @app.route('/news', methods=['POST', 'GET'])
 def news():
     """Render news page"""
-
-    return render_template('news.html', active='news')
+    
+    news = News.query.all()
+    return render_template('news.html', active='news', news=news)
 
 
 # ***************** WALLETS ******************

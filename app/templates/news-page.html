@@ -4,22 +4,10 @@
 
 <div class="content__main">
   <section class="news-page">
-    <h1>Примерный заголовок новостей</h1>
-    <img src="/static/images/news/1.jpg" alt="news" />
+    <h1>{{ news.title }}</h1>
+    <img src="/static/media/{{ news.img }}" alt="news" />
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam ullam,
-      natus sequi exercitationem ad necessitatibus aut vel ut nam, soluta libero
-      commodi doloribus sit. Voluptate molestiae libero minus obcaecati
-      repellendus!
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam ullam,
-      natus sequi exercitationem ad necessitatibus aut vel ut nam, soluta libero
-      commodi doloribus sit. Voluptate molestiae libero minus obcaecati
-      repellendus!Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-      Aperiam ullam, natus sequi exercitationem ad necessitatibus aut vel ut
-      nam, soluta libero commodi doloribus sit. Voluptate molestiae libero minus
-      obcaecati repellendus!
+      {{ news.description }}
     </p>
   </section>
 </div>

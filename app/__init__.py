@@ -4,6 +4,7 @@ from flask import Flask, jsonify, render_template, url_for, request, redirect, f
 from flask_login import LoginManager
 from flask_admin import Admin
 
+
 import os
 from app import config
 
@@ -15,17 +16,17 @@ app.config['SECRET_KEY'] = 'secret'
 app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+pymysql://{config.DB_LOGIN}:{config.DB_PASS}@{config.DB_HOST}:{config.DB_PORT}/{config.DB_NAME}?charset=utf8mb4'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-# admin conf
-app.config['FLASK_ADMIN_SWATCH'] = 'cerulean'
-admin = Admin(app, name='admin', template_mode='bootstrap3')
-
 db = SQLAlchemy(app)
 manager = LoginManager(app)
 
 app_root = os.path.dirname(os.path.abspath(__file__))
 
+# admin conf
+app.config['FLASK_ADMIN_SWATCH'] = 'cerulean'
+admin_ = Admin(app, name='admin', template_mode='bootstrap3')
 
-from app import models, routes
+
+from app import models, routes, admin
 
 with app.app_context():
     db.create_all()
