@@ -6,18 +6,18 @@
     <div class="content__item content__item_1">
       <div class="content__item-top">Счёт-эскроу</div>
       <div class="content__item-bottom">
-        10000
+        {{ user.escrow }}
         <span>RUB</span>
       </div>
     </div>
     <div class="content__item content__item_2">
       <div class="content__item-top">Выполнено заявок</div>
-      <div class="content__item-bottom">32</div>
+      <div class="content__item-bottom">{{ user.requests }}</div>
     </div>
     <div class="content__item content__item_3">
       <div class="content__item-top">Получено</div>
       <div class="content__item-bottom">
-        5200
+        {{ user.received }}
         <span>RUB</span>
       </div>
     </div>

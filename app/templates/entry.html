@@ -12,24 +12,34 @@
 <body class="body">
 
 
-<main class="main">
+  <main class="main">
 
-  <section class="entry">
-    <form class="entry__inner">
-      <div class="entry__logo">
-        <img class="entry__logo-img" width="147" height="54" src="images/logo.svg" alt="logo">
-      </div>
-      <input class="entry__input" type="text" placeholder="Ввести инвайт">
-      <button class="entry__btn" type="submit">
-        Войти
-      </button>
-    </form>
-  </section>
+    <section class="entry">
+      <form action='/entry' method='post' class="entry__inner">
+        <div class="entry__logo">
+          <img class="entry__logo-img" width="147" height="54" src="/static/images/logo.svg" alt="logo">
+        </div>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul class=flashes>
+          {% for message in messages %}
+          <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block body %}{% endblock %}
+        <input name="token" class="entry__input" type="text" placeholder="Ввести инвайт">
+        <button class="entry__btn" type="submit">
+          Войти
+        </button>
+      </form>
+    </section>
 
-</main>
+  </main>
 
 
-<script src="/static/js/main.min.js"></script>
+  <script src="/static/js/main.min.js"></script>
 </body>
 
 </html>

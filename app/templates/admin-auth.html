@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="#111111" />
+    <title>Admin</title>
+</head>
+
+<style>
+body{
+    background-color:#5286F3;
+    font-size:14px;
+    color:#fff;
+}
+.simple-login-container{
+    width:300px;
+    max-width:100%;
+    margin:50px auto;
+}
+.simple-login-container h2{
+    text-align:center;
+    font-size:20px;
+}
+
+.simple-login-container .btn-login{
+    background-color: blue;
+    color:#fff;
+}
+a{
+    color:#fff;
+}
+
+</style>
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="simple-login-container">
+    <h2>Admin Auth</h2>
+    {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ul class=flashes>
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
+            {% block body %}{% endblock %}
+    <form action="/admin/auth" method="post">
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <input type="text" class="form-control" name="login"  placeholder="login">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <input type="password" placeholder="password" name='password' class="form-control">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <input type="submit" class="btn btn-block btn-login" placeholder="Enter your Password" >
+        </div>
+    </div>
+    </form>
+</div>
+
+</body>
+
+</html>

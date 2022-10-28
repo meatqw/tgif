@@ -36,7 +36,7 @@
               </div>
 
               <div class="content__exit-wrap _show-1024">
-                <button class="content__exit" type="button">
+                <button class="content__exit" type="button" onclick="window.location.replace('/logout');">
                   <img
                     class="content__exit-img"
                     width="30"
@@ -55,7 +55,7 @@
                   <span class="balance__text-text balance__text-text_first">
                     Баланс
                   </span>
-                  <span class="balance__balance"> 20000 </span>
+                  <span class="balance__balance"> {{ user.balance }} </span>
                   <span class="balance__text-text"> RUB </span>
                 </div>
                 <button class="balance__btn js-toggle-balance">
@@ -122,7 +122,7 @@
               </a>
             </div>
 
-            <button class="content__exit" type="button">
+            <button class="content__exit" type="button" onclick="window.location.replace('/logout');">
               <img
                 class="content__exit-img"
                 width="30"
