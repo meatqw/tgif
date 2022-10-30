@@ -1,28 +1,6 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="content__main">
-  <div class="content__items">
-    <div class="content__item content__item_1">
-      <div class="content__item-top">Счёт-эскроу</div>
-      <div class="content__item-bottom">
-        {{ user.escrow }}
-        <span>RUB</span>
-      </div>
-    </div>
-    <div class="content__item content__item_2">
-      <div class="content__item-top">Выполнено заявок</div>
-      <div class="content__item-bottom">{{ user.requests }}</div>
-    </div>
-    <div class="content__item content__item_3">
-      <div class="content__item-top">Получено</div>
-      <div class="content__item-bottom">
-        {{ user.received }}
-        <span>RUB</span>
-      </div>
-    </div>
-  </div>
-
   <section class="sale">
     <h1 class="sale__title title">Продажа</h1>
     <div class="sale__inner">

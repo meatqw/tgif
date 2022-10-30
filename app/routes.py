@@ -133,17 +133,17 @@ def auth():
 
     return render_template('admin-auth.html')
 
-@app.route('/admin/logout', methods=['POST', 'GET'])
-@login_required
-def logout_admin():
-    logout_user()
-    return redirect(url_for('auth'))
+# @app.route('/admin/logout', methods=['POST', 'GET'])
+# @login_required
+# def logout_admin():
+#     logout_user()
+#     return redirect(url_for('auth'))
 
 
-@app.after_request
-def redirect_to_signin_admin(response):
-    """Redirect user without authorization"""
-    if response.status_code == 401:
-        return redirect(url_for('auth') + '?next=' + request.url)
-    else:
-        return response
+# @app.after_request
+# def redirect_to_signin_admin(response):
+#     """Redirect user without authorization"""
+#     if response.status_code == 401:
+#         return redirect(url_for('auth') + '?next=' + request.url)
+#     else:
+#         return response
